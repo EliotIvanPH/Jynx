@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next"
 import { initReactI18next } from "react-i18next"
 import { useEffect, useState } from "react"
 import "../styles/index.scss"
+import Logo from ""
 
 export default function index() {
   const [windowLoaded, setWindowLoaded] = useState(undefined)
@@ -32,7 +33,9 @@ export default function index() {
     <>
       <Layout switchLang={switchLang}>
         <SEO title="Inicio" />
-
+        <footer>
+          <img src={ } alt="icon" />
+        </footer>
       </Layout>
     </>
   )
