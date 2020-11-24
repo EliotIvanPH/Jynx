@@ -33,7 +33,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Barlow Semi Condensed\:300,400,500,700`],
+        fonts: [
+          `Barlow Semi Condensed\:300,400,500,700`,
+          `Lato\:300,400,500,700`,
+        ],
         display: "swap",
       },
     },
