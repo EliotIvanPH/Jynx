@@ -21,7 +21,10 @@ header {
       display: inline-flex;
       list-style: none;
       align-items: center;
-      @include media(lg) {
+      @include media(xs) {
+        display: none;
+      }
+      @include media(sm) {
         display: none;
       }
       li {
@@ -48,7 +51,10 @@ header {
       display: none;
       width: 25px;
       margin-right: 20px;
-      @include media(lg) {
+      @include media(xs) {
+        display: block;
+      }
+      @include media(sm) {
         display: block;
       }
     }
