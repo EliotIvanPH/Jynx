@@ -2,9 +2,17 @@ import React from "react"
 import { Link } from "gatsby"
 import "../styles/Header.scss"
 import { useTranslation } from "react-i18next"
-import Logo from "../images/venis-logo.png"
-import ShoppingCart from "../images/icons/shopping-cart.png"
+import Logo from "../images/logo.png"
+import ShoppingCart from "../images/icons/shop.png"
 import MenuIcon from "../images/icons/menu-icon.png"
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faStar,
+} from '@fortawesome/free-solid-svg-icons'
+import { config } from '@fortawesome/fontawesome-svg-core'
+// Disable the auto CSS insertion
+config.autoAddCss = false
 
 export default function Header({ switchLang }) {
   const [t, i18n] = useTranslation()
@@ -15,11 +23,14 @@ export default function Header({ switchLang }) {
         <nav>
           <img className="imagenLogo" src={Logo} alt="Logo" />
           <ul>
-            <li>{t("aboutUs")}</li>
-            <li>{t("howWe")}</li>
-            <li>{t("benefits")}</li>
-            <li>{t("clients")}</li>
-            <li>Blog</li>
+            <li className="review">
+            <FontAwesomeIcon style={{color:"gold", height: '30px'}} icon={faStar} size="1x" />
+            <FontAwesomeIcon style={{color:"gold", height: '30px'}} icon={faStar} size="1x" />
+            <FontAwesomeIcon style={{color:"gold", height: '30px'}} icon={faStar} size="1x" />
+            <FontAwesomeIcon style={{color:"gold", height: '30px'}} icon={faStar} size="1x" />
+            <FontAwesomeIcon style={{color:"gold", height: '30px'}} icon={faStar} size="1x" />
+            </li>
+            <span className="review">{"(2,264 "+t("review")+")"}</span>
             <li>
               <button
                 onClick={() => {
@@ -41,7 +52,6 @@ export default function Header({ switchLang }) {
               <img src={ShoppingCart} alt="Shopping Cart" />
             </li>
           </ul>
-          <img src={MenuIcon} alt="Menu" className="menuIcon" />
         </nav>
       </div>
     </header>

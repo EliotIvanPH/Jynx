@@ -6,6 +6,7 @@ module.exports = {
     author: `@EliotIvanPH`,
   },
   plugins: [
+    `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
