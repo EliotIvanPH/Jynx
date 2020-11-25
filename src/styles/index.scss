@@ -5,18 +5,18 @@
   box-sizing: border-box;
   font-family: "Barlow Semi Condensed", sans-serif;
 }
-body {
-  @include media(sm) {
-    background-color: orange;
-  }
-  @include media(md) {
-    background-color: pink;
-  }
+// body {
+//   @include media(sm) {
+//     background-color: orange;
+//   }
+//   @include media(md) {
+//     background-color: pink;
+//   }
 
-  @include media(xl) {
-    background-color: yellow;
-  }
-}
+//   @include media(xl) {
+//     background-color: yellow;
+//   }
+// }
 .form-info {
   background-color: #ece7e8;
   padding-top: 75px;
@@ -61,153 +61,7 @@ body {
     }
   }
 }
-.how-we-do {
-  width: 100%;
-  padding: 50px 0px 50px 0px;
-  .container {
-    width: 80%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    .info-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding: 20px 0px;
-      @include media(xl) {
-        grid-template-columns: 1fr;
-        .reverse{
-          grid-row: 1;
-        }
-      }
-      @include media(md) {
-        grid-template-columns: 1fr;
-        .reverse{
-          grid-row: 1;
-        }
-      }
-      @include media(sm) {
-        grid-template-columns: 1fr;
-        .reverse{
-          grid-row: 1;
-        }
-      }
-      @include media(xs) {
-        grid-template-columns: 1fr;
-        .reverse{
-          grid-row: 1;
-        }
-      }
-      .text-info {
-        display: flex;
-        flex-flow: column;
-        padding: 35px;
-        h5 {
-          font-size: 25px;
-          margin-bottom: 30px;
-          text-transform: uppercase;
-          color: #a6aeca;
-          display: inline-block;
-          letter-spacing: 1px;
-          font-weight: 400;
-          position: relative;
-        }
-        h3 {
-          font-size: 52px;
-          line-height: 52px;
-          color: #343132;
-          margin-bottom: 61px;
-          font-weight: bold;
-          font-family: "Barlow Semi Condensed", sans-serif;
-        }
-        p {
-          font-size: 21px;
-          color: #343132;
-          font-family: "Lato", sans-serif;
-          font-weight: 200;
-          margin-bottom: 35px;
-          line-height: 24px;
-        }
-        button{
-          font-size: 18px;
-          color: #fff;
-          background-color: #131313;
-          font-family: "Barlow Semi Condensed", sans-serif;
-          font-weight: 600;
-          width: 176px;
-          height: 50px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          letter-spacing: 2px;
-          transition: 0.5s;
-        }
-      }
-      .img-info{
-        display: flex;
-        align-items: center;
-        @include media(xl) {
-          display: flex;
-          justify-content: center;
-        }
-        @include media(md) {
-          display: flex;
-          justify-content: center;
-        }
-        @include media(sm) {
-          display: flex;
-          justify-content: center;
-        }
-        @include media(xs) {
-          display: flex;
-          justify-content: center;
-        }
-        img{
-          width: 100%;
-          max-width: 500px;
-          height: auto;
-        }
-      }
-    }
-    .info-col{
-      display: grid;
-      margin-top: 20px;
-      grid-template-columns: 1fr 1fr 1fr;
-      h3 {
-        text-align: center;
-        color: #333333;
-        font-size: 25px;
-        line-height: 25px;
-        font-family: "Barlow Semi Condensed", sans-serif;
-        font-weight: 400;
-        margin-bottom: 25px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-      }
-      p {
-        text-align: center;
-        font-size: 20px;
-        line-height: 23px;
-        font-family: "Lato", sans-serif;
-        font-weight: 300;
-        color: #343132;
-      }
-      .info-col-container{
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        img{
-          width: 100%;
-          max-width: 500px;
-          height: auto;
-        }
-      }
-    }
-  }
-}
+
 :root {
   --green: #aebebf;
   --gold: #b5ab80;
@@ -229,6 +83,11 @@ h2 {
     margin-left: auto;
   }
 }
+
+input[type="checkbox"] {
+  display: none;
+}
+
 .blog {
   text-align: center;
   padding: 50px 0px;
@@ -309,10 +168,10 @@ h2 {
       .images {
         margin: 50px 0;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         img {
-          margin: auto 30px;
+          margin: auto 20px;
         }
       }
     }
@@ -452,21 +311,65 @@ h2 {
   padding: 22px;
   text-align: justify;
   .cardCollapse {
+    width: 100%;
+    margin: auto;
     .cardHeader {
+      display: block;
       border-bottom: 1px solid #eaeaea !important;
-      padding: 20px 5px;
+      transition: all 0.25s ease-out;
+      display: block;
+      font-size: 16px;
+      text-align: left;
+      padding: 15px 0;
+      cursor: pointer;
+      transition: all 0.25s ease-out;
       p {
         font-size: 18px;
         font-family: "Lato", sans-serif;
+        font-weight: 200;
+        color: #333333;
+      }
+
+      &::before {
+        content: " ";
+        float: right;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid currentColor;
+        vertical-align: middle;
+        transform: translateY(6px);
+        transition: transform 0.2s ease-out;
+        color: #333333;
       }
     }
+
+    .toggle:checked + .cardHeader {
+      p {
+        color: #edbecb;
+      }
+    }
+
+    .toggle:checked + .cardHeader::before {
+      transform: rotate(90deg) translateX(-3px);
+      color: #edbecb;
+    }
+
+    .toggle:checked + .cardHeader {
+      + .cardContent {
+        max-height: 350px;
+        padding: 5px 0px 40px;
+        border-bottom: 1px solid #eaeaea;
+      }
+    }
+
     .cardContent {
-      padding: 5px 5px 40px;
-      border-bottom: 1px solid #eaeaea;
-      display: none;
+      max-height: 0px;
+      overflow: hidden;
+      transition: all 0.25s ease-in-out;
       p {
         font-family: "Lato", sans-serif;
         font-weight: 200;
+        font-size: 18px;
       }
     }
   }
@@ -528,7 +431,7 @@ h2 {
   }
   @include media(xl) {
     form {
-      width: 50%;
+      width: 40%;
       margin: auto;
     }
   }

@@ -7,6 +7,18 @@ import { useTranslation } from "react-i18next"
 import { initReactI18next } from "react-i18next"
 import { useEffect, useState } from "react"
 import "../styles/index.scss"
+import Collapse from '@kunukn/react-collapse';
+//assets
+import banner from "../images/banner-image.jpg";
+import handleft from "../images/icons/hand-btn.png"
+import handRight from "../images/icons/right-btn.png"
+import arrowLeft from "../images/icons/left-arrow-btn.png"
+import arrowRight from "../images/icons/right-arrow-btn.png"
+import facial from "../images/product-image1.png";
+import facial2 from "../images/product-image2.png";
+import circle1 from "../images/se-1.png";
+import circle2 from "../images/se-2.png";
+import circle3 from "../images/se-3.png";
 import Logo from "../images/icons/footer-logo.png";
 import Facebook from "../images/icons/facebook.png";
 import Instagram from "../images/icons/instagram.png";
@@ -30,20 +42,10 @@ import DigitalAnalysis from "../images/se-2.png";
 import UltramodernEquipment from "../images/se-3.png";
 
 
-//assets
-import banner from "../images/banner-image.jpg";
-import handleft from "../images/icons/hand-btn.png"
-import handRight from "../images/icons/right-btn.png"
-import arrowLeft from "../images/icons/left-arrow-btn.png"
-import arrowRight from "../images/icons/right-arrow-btn.png"
-import facial from "../images/product-image1.png";
-import facial2 from "../images/product-image2.png";
-import circle1 from "../images/se-1.png";
-import circle2 from "../images/se-2.png";
-import circle3 from "../images/se-3.png";
 
 export default function index() {
   const [windowLoaded, setWindowLoaded] = useState(undefined)
+  const Collapse = require('@kunukn/react-collapse');
 
   useEffect(() => {
     if (!windowLoaded) {
@@ -114,85 +116,8 @@ export default function index() {
             </div>
           </div>
         </section>
-        <section className="how-we-do">
-          <div className="container">
-            <div  className="info-row"> 
-              <div  className="text-info">
-                <h5>HOW WE DO IT</h5>
-                <h3>Anti-Aging Facial Treatments With The Latest Skincare Technology</h3>
-                <p>Meet the Ultrasonix - a state-of-the-art device that erases wrinkles and defies 
-                  the signs of aging while reducing the size of pores. Ultrasonic pulses 
-                  enhance the performance of skincare products, leaving a rejuvenated and youthful appearance.
-                </p>
-                <p>Cooling and warming vibration technology makes skin smoother than ever,
-                giving your skin an airbrushed appearance.
-                </p>
-              </div>
-              <div className="img-info">
-                <img src={facial} alt="anti-agnig facial"/>
-              </div>
-            </div>
-            <div  className="info-row"> 
-              <div className="img-info">
-                <img src={facial2} alt="anti-agnig facial"/>
-              </div>
-              <div  className="text-info reverse">
-                <h5>A DEEP DIVE BELOW THE SKIN</h5>
-                <h3>At Venis, we personalize each experience with care, from start to finish</h3>
-                <p>
-                  After providing contact information, one of our skin advisers will be in touch and 
-                  complete a brief evaluation based on your target concerns. We’ll match you with
-                  a top-rated skincare center and customized products that fit your needs, at an 
-                  unbeatable price.
-                </p>
-                <p>
-                We always take care of of our clients we make sure you will always be with a smile!
-                </p>
-                <button>Book a Call</button>
-              </div>
-            </div>
-            <div  className="info-col"> 
-              <div className="info-col-container">
-                <div className="img-info">
-                  <img src={circle1} alt="light therapy"/>
-                </div>
-                <div  className="text-info">
-                  <h3>LED LIGHT THERAPY</h3>
-                  <p>
-                  Cure your skin troubles with different wavelengths of light in 
-                  this advanced treatment.
-                  </p>
-                </div>
-              </div>
-              <div className="info-col-container">
-                <div className="img-info">
-                  <img src={circle2} alt="light therapy"/>
-                </div>
-                <div  className="text-info">
-                  <h3>DIGITAL ANALYSIS DEVICE</h3>
-                  <p>
-                  Get to know your skin like never before with the latest 
-                  technology that's redefining skincare consultations and results globally.
-                  </p>
-                </div>
-              </div>
-              <div className="info-col-container">
-                <div className="img-info">
-                  <img src={circle3} alt="light therapy"/>
-                </div>
-                <div  className="text-info">
-                  <h3>ULTRAMODERN EQUIPMENT AND SKINCARE</h3>
-                  <p>
-                  We use the worlds most advanced systems that maximize the effects of the 
-                  applied serum rewinding the years in your face with a dashing radiant look.s
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
-                <section className="blog">
+        <section className="blog">
           <div className="container">
             <div>
               <img src={LedLight}  alt="processing"/>
@@ -225,6 +150,7 @@ export default function index() {
             </div>
           </div>
         </section>
+
         <section className="testimonial">
           <div className="container">
             <div className="text">
@@ -236,10 +162,12 @@ export default function index() {
             </div>
           </div>
         </section>
+
         <div className="callContainer">
           <h2>{t("callTitle")}</h2>
           <button>{t("callButton")}</button>
         </div>
+
         <section className="results">
           <h2>{t("resultTitle")}</h2>
         </section>
@@ -259,41 +187,44 @@ export default function index() {
             </div>
           </div>
         </section>
+
         <section className="faq">
           <h2>{t("faqTitle")}</h2>
+        
           <div className="cardCollapse">
-            <div className="cardHeader collapsed">
-              <p>{t("faq1")}</p>
-            </div>
+            <input id="faq1" className="toggle" type="checkbox"/>
+            <label htmlFor="faq1" className="cardHeader"><p>{t("faq1")}</p></label>
             <div className="cardContent">
               <p>{t("answer1")}</p>
             </div>
           </div>
-          <div className="cardCollapse">
-            <div className="cardHeader">
-              <p>{t("faq2")}</p>
-            </div>
+
+           <div className="cardCollapse">
+            <input id="faq2" className="toggle" type="checkbox"/>
+            <label htmlFor="faq2" className="cardHeader"><p>{t("faq2")}</p></label>
             <div className="cardContent">
               <p>{t("answer2")}</p>
             </div>
           </div>
-          <div className="cardCollapse">
-            <div className="cardHeader">
-              <p>{t("faq3")}</p>
-            </div>
+
+           <div className="cardCollapse">
+            <input id="faq3" className="toggle" type="checkbox"/>
+            <label htmlFor="faq3" className="cardHeader"><p>{t("faq3")}</p></label>
             <div className="cardContent">
               <p>{t("answer3")}</p>
             </div>
           </div>
-          <div className="cardCollapse">
-            <div className="cardHeader">
-              <p>{t("faq4")}</p>
-            </div>
+
+           <div className="cardCollapse">
+            <input id="faq4" className="toggle" type="checkbox"/>
+            <label htmlFor="faq4" className="cardHeader"><p>{t("faq4")}</p></label>
             <div className="cardContent">
               <p>{t("answer4")}</p>
             </div>
           </div>
+
         </section>
+
         <section className="subscribe">
           <h2>{t("subscribeTitle")}</h2>
           <form>
@@ -303,6 +234,7 @@ export default function index() {
             <button>{t("callButton")}</button>
           </form>
         </section>
+
         <footer>
           <div className="logo">
             <img src={ Logo } alt="icon" />
