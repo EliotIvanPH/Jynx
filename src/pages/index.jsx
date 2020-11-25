@@ -56,20 +56,22 @@ export default function index() {
       <Layout switchLang={switchLang}>
         <SEO title="Inicio" />
         <section className="blog">
-          <div>
-            <img src={LedLight}  alt="processing"/>
-            <h3>{t("ledLight")}</h3>
-            <p>{t("ledLightText")}</p>
-          </div>
-          <div>
-            <img src={DigitalAnalysis}  alt="processing"/>
-            <h3>{t("digitalAnalysis")}</h3>
-            <p>{t("digitalAnalysisText")}</p>
-          </div>
-          <div>
-            <img src={UltramodernEquipment}  alt="processing"/>
-            <h3>{t("ultramodernEquipment")}</h3>
-            <p>{t("ultramodernEquipmentText")}</p>
+          <div className="container">
+            <div>
+              <img src={LedLight}  alt="processing"/>
+              <h3>{t("ledLight")}</h3>
+              <p>{t("ledLightText")}</p>
+            </div>
+            <div>
+              <img src={DigitalAnalysis}  alt="processing"/>
+              <h3>{t("digitalAnalysis")}</h3>
+              <p>{t("digitalAnalysisText")}</p>
+            </div>
+            <div>
+              <img src={UltramodernEquipment}  alt="processing"/>
+              <h3>{t("ultramodernEquipment")}</h3>
+              <p>{t("ultramodernEquipmentText")}</p>
+            </div>
           </div>
         </section>
         <section className="partners">
@@ -88,11 +90,13 @@ export default function index() {
         </section>
         <section className="testimonial">
           <div className="container">
-            <h5>{t("testimonialTitle")}</h5>
-            <div className="border">
-              <p>{t("testimonialText")}</p>
+            <div className="text">
+              <h5>{t("testimonialTitle")}</h5>
+              <div className="border">
+                <p>{t("testimonialText")}</p>
+              </div>
+              <p className="author">SANEZ P.</p>
             </div>
-            <p className="author">SANEZ P.</p>
           </div>
         </section>
         <div className="callContainer">
@@ -104,21 +108,19 @@ export default function index() {
 
         </section>
         <section className="gallery">
-          <h2>{t("galleryTitle")}</h2>
-          <div>
-            <img src={ Gallery1 } alt="gallery"/>
-          </div>
-          <div>
-            <img src={ Gallery2 } alt="gallery"/>
-          </div>
-          <div>
-            <img src={ Gallery3 } alt="gallery"/>
-          </div>
-          <div>
-            <img src={ Gallery4 } alt="gallery"/>
-          </div>
-          <div>
-            <img src={ Gallery5 } alt="gallery"/>
+          <div className="container">
+            <h2>{t("galleryTitle")}</h2>
+            <div className="images">
+              <img src={ Gallery1 } alt="gallery"/>
+              <div>
+                <img src={ Gallery2 } alt="gallery" className="heightImg"/>
+                <img src={ Gallery3 } alt="gallery"/>
+              </div>
+              <div>
+                <img src={ Gallery4 } alt="gallery"/>
+                <img src={ Gallery5 } alt="gallery" className="heightImg"/>
+              </div>
+            </div>
           </div>
         </section>
         <section className="faq">

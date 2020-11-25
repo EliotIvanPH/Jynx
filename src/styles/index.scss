@@ -12,9 +12,7 @@ body {
   @include media(md) {
     background-color: pink;
   }
-  @include media(lg) {
-    background-color: aqua;
-  }
+
   @include media(xl) {
     background-color: yellow;
   }
@@ -28,25 +26,47 @@ h2 {
   font-size: 34px;
   text-align: center;
   margin-bottom: 50px;
+  @include media(xl) {
+    font-size: 46px;
+  }
+}
+.container {
+  @include media(xl) {
+    max-width: 1140px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 .blog {
   text-align: center;
-  padding: 50px 20px;
-  div {
-    margin: 30px 0;
-    img {
-      margin-bottom: 20px;
+  padding: 50px 0px;
+  .container {
+    div {
+      margin: 30px 0;
+      img {
+        margin-bottom: 20px;
+      }
+      h3 {
+        font-size: 22px;
+        font-weight: 400;
+        margin-bottom: 15px;
+      }
+      p {
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        line-height: 23px;
+        font-size: 18px;
+      }
     }
-    h3 {
-      font-size: 22px;
-      font-weight: 400;
-      margin-bottom: 15px;
-    }
-    p {
-      font-family: "Lato", sans-serif;
-      font-weight: 300;
-      line-height: 23px;
-      font-size: 18px;
+  }
+  @include media(xl) {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      div {
+        margin: 30px;
+      }
     }
   }
 }
@@ -65,6 +85,7 @@ h2 {
       font-size: 36px;
       line-height: 42px;
       margin-bottom: 30px;
+      color: #343132;
     }
     p {
       font-size: 16px;
@@ -81,6 +102,30 @@ h2 {
       }
     }
   }
+  @include media(xl) {
+    padding: 80px 0px;
+    .container {
+      max-width: 1140px;
+      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+      h5 {
+        font-size: 25px;
+      }
+      p {
+        font-size: 21px;
+      }
+      .images {
+        margin: 50px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        img {
+          margin: auto 30px;
+        }
+      }
+    }
+  }
 }
 
 .testimonial {
@@ -89,7 +134,7 @@ h2 {
   height: 20em;
   display: flex;
   align-items: center;
-  .container {
+  .text {
     margin: 20px;
     text-align: justify;
     h5 {
@@ -100,15 +145,58 @@ h2 {
       margin-bottom: 15px;
     }
     .border {
-      border: 3px solid #ffffff;
-      padding: 20px;
       font-size: 16px;
       color: #ffffff;
+      position: relative;
+      background-color: transparent;
+      border: 3px solid #ffffff;
+      border-radius: 5px;
+      padding: 20px;
+
+      :after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border: 28px solid transparent;
+        border-top-color: #ffffff;
+        border-bottom: 0;
+        border-left: 0;
+        margin-left: -100px;
+        margin-bottom: -28px;
+      }
     }
     .author {
       color: white;
       text-align: right;
       margin: 10px 20px 0;
+    }
+  }
+  @include media(lg) {
+    background-image: url("../images/testimonial.jpg");
+    .text {
+      width: 50%;
+      float: right;
+    }
+  }
+  @include media(xl) {
+    background-image: url("../images/testimonial.jpg");
+    background-size: cover;
+    height: 500px;
+    .text {
+      width: 50%;
+      float: right;
+      h5 {
+        font-size: 25px;
+      }
+      p {
+        font-size: 21px;
+      }
+      .author {
+        font-size: 22px;
+      }
     }
   }
 }
@@ -130,12 +218,42 @@ h2 {
     text-transform: uppercase;
     margin-bottom: 50px;
   }
+  @include media(lg) {
+    h2 {
+      margin: 20px 100px 20px;
+    }
+  }
 }
+
 .gallery {
   padding: 20px;
   div img {
     width: 100%;
     margin-bottom: 20px;
+  }
+  @include media(lg) {
+    .images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      img {
+        margin-bottom: 1px;
+      }
+    }
+    .heightImg {
+      height: 55%;
+    }
+  }
+  @include media(xl) {
+    .images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      img {
+        margin-bottom: 1px;
+      }
+    }
+    .heightImg {
+      height: 55%;
+    }
   }
 }
 
@@ -158,6 +276,23 @@ h2 {
       p {
         font-family: "Lato", sans-serif;
         font-weight: 200;
+      }
+    }
+  }
+  @include media(lg) {
+    .cardCollapse {
+      width: 80%;
+      margin: auto;
+    }
+  }
+  @include media(xl) {
+    .cardCollapse {
+      width: 60%;
+      margin: auto;
+      .cardHeader {
+        p {
+          font-size: 21px;
+        }
       }
     }
   }
@@ -194,6 +329,18 @@ h2 {
       text-transform: uppercase;
     }
   }
+  @include media(lg) {
+    form {
+      width: 70%;
+      margin: auto;
+    }
+  }
+  @include media(xl) {
+    form {
+      width: 50%;
+      margin: auto;
+    }
+  }
 }
 
 footer {
@@ -212,6 +359,9 @@ footer {
       font-style: italic;
       padding: 13px 20px;
       text-align: justify;
+      font-size: 13px;
+      line-height: 22px;
+      font-family: "Lato", sans-serif;
     }
   }
   .socialMedia {
@@ -223,6 +373,21 @@ footer {
     }
     p {
       margin-top: 23px;
+      font-family: "Lato", sans-serif;
+      font-style: italic;
+      font-size: 13px;
+    }
+  }
+  @include media(xl) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .logo {
+      margin-bottom: 0px;
+    }
+    .disclaimer {
+      margin-bottom: 0px;
+      border-top: 0px;
+      border-left: 3px solid #78c3b4;
     }
   }
 }

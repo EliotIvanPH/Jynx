@@ -22,7 +22,7 @@ $breakpoint-xl: 1200px;
       @content;
     }
   } @else if $media == xl {
-    @media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl) {
+    @media (min-width: $breakpoint-xl) {
       @content;
     }
   }
