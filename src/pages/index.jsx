@@ -6,7 +6,6 @@ import SEO from "../components/seo"
 import { useTranslation } from "react-i18next"
 import { initReactI18next } from "react-i18next"
 import { useEffect, useState } from "react"
-import 'react-awesome-slider/dist/styles.css';
 import "../styles/index.scss"
 import Logo from "../images/icons/footer-logo.png";
 import Facebook from "../images/icons/facebook.png";
