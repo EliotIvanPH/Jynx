@@ -7,7 +7,6 @@ import { useTranslation } from "react-i18next"
 import { initReactI18next } from "react-i18next"
 import { useEffect, useState } from "react"
 import "../styles/index.scss"
-import Collapse from '@kunukn/react-collapse';
 //assets
 import banner from "../images/banner-image.jpg";
 import handleft from "../images/icons/hand-btn.png"
@@ -16,9 +15,6 @@ import arrowLeft from "../images/icons/left-arrow-btn.png"
 import arrowRight from "../images/icons/right-arrow-btn.png"
 import facial from "../images/product-image1.png";
 import facial2 from "../images/product-image2.png";
-import circle1 from "../images/se-1.png";
-import circle2 from "../images/se-2.png";
-import circle3 from "../images/se-3.png";
 import Logo from "../images/icons/footer-logo.png";
 import Facebook from "../images/icons/facebook.png";
 import Instagram from "../images/icons/instagram.png";
@@ -42,12 +38,11 @@ import DigitalAnalysis from "../images/se-2.png";
 import UltramodernEquipment from "../images/se-3.png";
 
 
-
 export default function index() {
   const [windowLoaded, setWindowLoaded] = useState(undefined)
-  const Collapse = require('@kunukn/react-collapse');
 
   useEffect(() => {
+  
     if (!windowLoaded) {
       if (typeof window !== "undefined" && window) {
         setWindowLoaded(true)
@@ -58,7 +53,9 @@ export default function index() {
         })
       }
     }
+    console.log('stateVariable has been updated!');
   }, [windowLoaded])
+
   const [t, i18n] = useTranslation()
   function switchLang(lang) {
     i18n.use(initReactI18next).init({ lng: lang })
@@ -170,6 +167,38 @@ export default function index() {
 
         <section className="results">
           <h2>{t("resultTitle")}</h2>
+          <div class="scrolling-wrapper">
+            <div className="card">
+              <img src={Result1} alt="picture" />
+              <div className="text">
+                <p>{t("")}</p>
+              </div>
+            </div>
+            <div className="card">
+              <img src={Result2} alt="picture" />
+              <div className="text">
+                <p>{t("")}</p>
+              </div>
+            </div>
+            <div className="card">
+              <img src={Result3} alt="picture" />
+              <div className="text">
+                <p>{t("")}</p>
+              </div>
+            </div>
+            <div className="card">
+              <img src={Result4} alt="picture" />
+              <div className="text">
+                <p>{t("")}</p>
+              </div>
+            </div>
+            <div className="card">
+              <img src={Result5} alt="picture" />
+              <div className="text">
+                <p>{t("result5")}</p>
+              </div>
+            </div>
+          </div>
         </section>
         <section className="gallery">
           <div className="container">
@@ -254,3 +283,4 @@ export default function index() {
     </>
   )
 }
+
