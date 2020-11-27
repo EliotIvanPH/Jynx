@@ -38,6 +38,14 @@ import DigitalAnalysis from "../images/se-2.png";
 import UltramodernEquipment from "../images/se-3.png";
 
 
+//assets
+import handleft from "../images/icons/hand-btn.png"
+import handRight from "../images/icons/right-btn.png"
+import arrowLeft from "../images/icons/left-arrow-btn.png"
+import arrowRight from "../images/icons/right-arrow-btn.png"
+import facial from "../images/product-image1.png";
+import facial2 from "../images/product-image2.png";
+
 export default function index() {
   const [windowLoaded, setWindowLoaded] = useState(undefined)
 
@@ -66,21 +74,39 @@ export default function index() {
     <>
       <Layout switchLang={switchLang}>
         <SEO title="Inicio" />
+        <section className="banner">
+            <div className="container">
+              <div></div>
+              <span>
+              <div >
+                <h5>{t("bannerInfoh5")}</h5>
+                <h1>{t("bannerInfoh1")}</h1>
+                <p>{t("bannerInfop1")}</p>
+                <p>{t("bannerInfop2")}</p>
+                <button>{t("bannerInfob1")}</button>
+              </div>
+              </span>
+            </div>
+        </section>
+        <section className="mobile-container">
+          <h5>{t("bannerInfoh5")}</h5>
+          <h1>{t("bannerInfoh1")}</h1>
+          <p>{t("bannerInfop1")}</p>
+          <p>{t("bannerInfop2")}</p>
+          <button>{t("bannerInfob1")}</button>
+        </section>
         <section className="form-info">
           <div className="container">
-            <h3>
-              We Work With High-End Luxury<br/>
-              Brands & Boutiques
-            </h3>
+            <h3>{t("form-info")}</h3>
             <div className="row">
               <div>
                 <div className="form-group">
-                  <input id="name" type="text" className="form-control" placeholder="Name" />
+                  <input id="name" type="text" className="form-control" placeholder={t("name")} />
                 </div>
               </div>
               <div>
                 <div className="form-group">
-                  <input id="email" type="email" className="form-control" placeholder="Email" />
+                  <input id="email" type="email" className="form-control" placeholder={t("email")} />
                 </div>
               </div>
               <div >
@@ -89,26 +115,47 @@ export default function index() {
                     id="phone"
                     type="text"
                     className="form-control"
-                    placeholder="Phone No."
+                    placeholder={t("phone")}
                   />
                 </div>
               </div>
             </div>
-            <div className="form-main-btn">
               <div className="form-btn">
-                <img className="arrow-btn-left" src={arrowLeft} />
+                <img className="arrow-btn-left f" src={arrowLeft} />
                 <div className="free-skin-btn">
-                  <div className="free-skin-btn-anim">
-                    <a href="#;">
+                  <button className="buttonFlaw">
                       <img className="left" src={handleft} />
-                      I Want Flawless
-                      Skin Today
+                    {t("form-info-button")}
                       <img className="right" src={handRight}/>
-                    </a>
-                    <span></span>
-                  </div>
+                    </button>
                 </div>
-                <img className="arrow-btn-right" src={arrowRight} />
+                <img className="arrow-btn-right f" src={arrowRight} />
+              </div>
+          </div>
+        </section>
+        <section className="how-we-do">
+          <div className="container">
+            <div  className="info-row"> 
+              <div  className="text-info">
+                <h5>{t("title-blog-1")}</h5>
+                <h3>{t("sub-title-1")}</h3>
+                <p>{t("p-1-1")}</p>
+                <p>{t("p-2-1")}</p>
+              </div>
+              <div className="img-info">
+                <img src={facial} alt="anti-agnig facial"/>
+              </div>
+            </div>
+            <div  className="info-row"> 
+              <div className="img-info">
+                <img src={facial2} alt="anti-agnig facial"/>
+              </div>
+              <div  className="text-info reverse">
+                <h5>{t("title-blog-2")}</h5>
+                <h3>{t("sub-title-2")}</h3>
+                <p>{t("p-1-2")}</p>
+                <p>{t("p-2-2")}</p>
+                <button >{t("button-blog")}</button>
               </div>
             </div>
           </div>
