@@ -171,31 +171,36 @@ export default function index() {
             <div className="card">
               <img src={Result1} alt="picture" />
               <div className="text">
-                <p>{t("")}</p>
+                <p>{t("result1")}</p>
+                <small>JAMES L. 29 <span>{t("years")}</span></small>
               </div>
             </div>
             <div className="card">
               <img src={Result2} alt="picture" />
               <div className="text">
-                <p>{t("")}</p>
+                <p>{t("result2")}</p>
+                <small>EVELYN W. 54 <span>{t("years")}</span></small>
               </div>
             </div>
             <div className="card">
               <img src={Result3} alt="picture" />
               <div className="text">
-                <p>{t("")}</p>
+                <p>{t("result3")}</p>
+                <small>SHARON W. 50 <span>{t("years")}</span></small>
               </div>
             </div>
             <div className="card">
               <img src={Result4} alt="picture" />
               <div className="text">
-                <p>{t("")}</p>
+                <p>{t("result4")}</p>
+                <small>LILY B. 65 <span>{t("years")}</span></small>
               </div>
             </div>
             <div className="card">
               <img src={Result5} alt="picture" />
               <div className="text">
                 <p>{t("result5")}</p>
+                <small>ELLIE K. 35 <span>{t("years")}</span></small>
               </div>
             </div>
           </div>
