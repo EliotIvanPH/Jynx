@@ -7,6 +7,14 @@ import { useTranslation } from "react-i18next"
 import { initReactI18next } from "react-i18next"
 import { useEffect, useState } from "react"
 import "../styles/index.scss"
+//assets
+import banner from "../images/banner-image.jpg";
+import handleft from "../images/icons/hand-btn.png"
+import handRight from "../images/icons/right-btn.png"
+import arrowLeft from "../images/icons/left-arrow-btn.png"
+import arrowRight from "../images/icons/right-arrow-btn.png"
+import facial from "../images/product-image1.png";
+import facial2 from "../images/product-image2.png";
 import Logo from "../images/icons/footer-logo.png";
 import Facebook from "../images/icons/facebook.png";
 import Instagram from "../images/icons/instagram.png";
@@ -42,6 +50,7 @@ export default function index() {
   const [windowLoaded, setWindowLoaded] = useState(undefined)
 
   useEffect(() => {
+  
     if (!windowLoaded) {
       if (typeof window !== "undefined" && window) {
         setWindowLoaded(true)
@@ -52,7 +61,9 @@ export default function index() {
         })
       }
     }
+    console.log('stateVariable has been updated!');
   }, [windowLoaded])
+
   const [t, i18n] = useTranslation()
   function switchLang(lang) {
     i18n.use(initReactI18next).init({ lng: lang })
@@ -183,6 +194,7 @@ export default function index() {
             </div>
           </div>
         </section>
+
         <section className="testimonial">
           <div className="container">
             <div className="text">
@@ -194,12 +206,46 @@ export default function index() {
             </div>
           </div>
         </section>
+
         <div className="callContainer">
           <h2>{t("callTitle")}</h2>
           <button>{t("callButton")}</button>
         </div>
+
         <section className="results">
           <h2>{t("resultTitle")}</h2>
+          <div class="scrolling-wrapper">
+            <div className="card">
+              <img src={Result1} alt="picture" />
+              <div className="text">
+                <p>{t("")}</p>
+              </div>
+            </div>
+            <div className="card">
+              <img src={Result2} alt="picture" />
+              <div className="text">
+                <p>{t("")}</p>
+              </div>
+            </div>
+            <div className="card">
+              <img src={Result3} alt="picture" />
+              <div className="text">
+                <p>{t("")}</p>
+              </div>
+            </div>
+            <div className="card">
+              <img src={Result4} alt="picture" />
+              <div className="text">
+                <p>{t("")}</p>
+              </div>
+            </div>
+            <div className="card">
+              <img src={Result5} alt="picture" />
+              <div className="text">
+                <p>{t("result5")}</p>
+              </div>
+            </div>
+          </div>
         </section>
         <section className="gallery">
           <div className="container">
@@ -217,41 +263,44 @@ export default function index() {
             </div>
           </div>
         </section>
+
         <section className="faq">
           <h2>{t("faqTitle")}</h2>
+        
           <div className="cardCollapse">
-            <div className="cardHeader collapsed">
-              <p>{t("faq1")}</p>
-            </div>
+            <input id="faq1" className="toggle" type="checkbox"/>
+            <label htmlFor="faq1" className="cardHeader"><p>{t("faq1")}</p></label>
             <div className="cardContent">
               <p>{t("answer1")}</p>
             </div>
           </div>
-          <div className="cardCollapse">
-            <div className="cardHeader">
-              <p>{t("faq2")}</p>
-            </div>
+
+           <div className="cardCollapse">
+            <input id="faq2" className="toggle" type="checkbox"/>
+            <label htmlFor="faq2" className="cardHeader"><p>{t("faq2")}</p></label>
             <div className="cardContent">
               <p>{t("answer2")}</p>
             </div>
           </div>
-          <div className="cardCollapse">
-            <div className="cardHeader">
-              <p>{t("faq3")}</p>
-            </div>
+
+           <div className="cardCollapse">
+            <input id="faq3" className="toggle" type="checkbox"/>
+            <label htmlFor="faq3" className="cardHeader"><p>{t("faq3")}</p></label>
             <div className="cardContent">
               <p>{t("answer3")}</p>
             </div>
           </div>
-          <div className="cardCollapse">
-            <div className="cardHeader">
-              <p>{t("faq4")}</p>
-            </div>
+
+           <div className="cardCollapse">
+            <input id="faq4" className="toggle" type="checkbox"/>
+            <label htmlFor="faq4" className="cardHeader"><p>{t("faq4")}</p></label>
             <div className="cardContent">
               <p>{t("answer4")}</p>
             </div>
           </div>
+
         </section>
+
         <section className="subscribe">
           <h2>{t("subscribeTitle")}</h2>
           <form>
@@ -261,6 +310,7 @@ export default function index() {
             <button>{t("callButton")}</button>
           </form>
         </section>
+
         <footer>
           <div className="logo">
             <img src={ Logo } alt="icon" />
@@ -280,3 +330,4 @@ export default function index() {
     </>
   )
 }
+
