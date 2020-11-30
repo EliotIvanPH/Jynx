@@ -219,35 +219,55 @@ export default function index() {
               <img src={Result1} alt="picture" />
               <div className="text">
                 <p>{t("result1")}</p>
+<<<<<<< HEAD
                 <a href="#;"> {"JAMES L. 29 " + t("years") } </a>
+=======
+                <small>JAMES L. 29 <span>{t("years")}</span></small>
+>>>>>>> deb134ed96145d33cd66d6905b0fcfcaee714dcd
               </div>
             </div>
             <div className="card">
               <img src={Result2} alt="picture" />
               <div className="text">
                 <p>{t("result2")}</p>
+<<<<<<< HEAD
                 <a href="#;"> {"- Evelyn W. 54 " + t("years") } </a>
+=======
+                <small>EVELYN W. 54 <span>{t("years")}</span></small>
+>>>>>>> deb134ed96145d33cd66d6905b0fcfcaee714dcd
               </div>
             </div>
             <div className="card">
               <img src={Result3} alt="picture" />
               <div className="text">
                 <p>{t("result3")}</p>
+<<<<<<< HEAD
                 <a href="#;"> {"- Sharon W. 50" + t("years") } </a>
+=======
+                <small>SHARON W. 50 <span>{t("years")}</span></small>
+>>>>>>> deb134ed96145d33cd66d6905b0fcfcaee714dcd
               </div>
             </div>
             <div className="card">
               <img src={Result4} alt="picture" />
               <div className="text">
                 <p>{t("result4")}</p>
+<<<<<<< HEAD
                 <a href="#;"> {"- Lily B. 65 " + t("years") } </a>
+=======
+                <small>LILY B. 65 <span>{t("years")}</span></small>
+>>>>>>> deb134ed96145d33cd66d6905b0fcfcaee714dcd
               </div>
             </div>
             <div className="card">
               <img src={Result5} alt="picture" />
               <div className="text">
                 <p>{t("result5")}</p>
+<<<<<<< HEAD
                 <a href="#;"> {"- Alexi B. 35" + t("years") } </a>
+=======
+                <small>ELLIE K. 35 <span>{t("years")}</span></small>
+>>>>>>> deb134ed96145d33cd66d6905b0fcfcaee714dcd
               </div>
             </div>
           </div>
