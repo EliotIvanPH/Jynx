@@ -652,6 +652,14 @@ input[type="checkbox"] {
 
 .results {
   .scrolling-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    @include media(xs) {
+      flex-wrap: wrap;
+    }
     .card {
       width: 90%;
       flex: auto;
@@ -674,19 +682,12 @@ input[type="checkbox"] {
           position: relative;
           font-family: "Lato", sans-serif;
         }
-<<<<<<< HEAD
-        a {
-          text-decoration: none;
-          text-transform: uppercase;
-          color: #007bff;
-=======
         small {
           color: #edbecb;
           font-size: 18px;
           span {
             text-transform: uppercase;
           }
->>>>>>> deb134ed96145d33cd66d6905b0fcfcaee714dcd
         }
       }
       @include media(lg) {

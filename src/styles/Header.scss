@@ -13,26 +13,26 @@ header {
     justify-content: space-between;
     align-items: center;
     @include media(xs) {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    align-items: center;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-between;
+      align-items: center;
     }
     @include media(sm) {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    align-items: center;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-between;
+      align-items: center;
     }
     .imagenLogo {
       width: 75px;
       margin-left: 20px;
       @include media(xs) {
-      margin-bottom: 10px;
+        margin-bottom: 10px;
       }
       @include media(sm) {
-      margin-bottom: 10px;
-      } 
+        margin-bottom: 10px;
+      }
     }
     ul {
       display: inline-flex;
@@ -47,6 +47,8 @@ header {
         margin: 0 20px;
         cursor: pointer;
         button {
+          background-color: transparent;
+          border: none;
           font-style: normal;
           font-weight: bold;
           font-size: 14px;
@@ -58,11 +60,10 @@ header {
         }
       }
       .review {
-      @include media(xs) {
-        display: none;
-        }   
+        @include media(xs) {
+          display: none;
+        }
       }
     }
-    
   }
 }
