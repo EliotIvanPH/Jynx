@@ -6,6 +6,9 @@ import Logo from "../images/logo.png"
 import ShoppingCart from "../images/icons/shop.png"
 import MenuIcon from "../images/icons/menu-icon.png"
 
+import mxFlag from "../images/icons/mx.png"
+import usaFlag from "../images/icons/usa.png"
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faStar,
@@ -32,21 +35,7 @@ export default function Header({ switchLang }) {
             </li>
             <span className="review">{"(2,264 "+t("review")+")"}</span>
             <li>
-              <button
-                onClick={() => {
-                  switchLang("en")
-                }}
-              >
-                EN
-              </button>
-              |
-              <button
-                onClick={() => {
-                  switchLang("es")
-                }}
-              >
-                ES
-              </button>
+              <img src={usaFlag} alt="Flag"/>
             </li>
             <li>
               <img src={ShoppingCart} alt="Shopping Cart" />
