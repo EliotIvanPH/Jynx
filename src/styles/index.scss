@@ -673,6 +673,11 @@ input[type="checkbox"] {
           position: relative;
           font-family: "Lato", sans-serif;
         }
+        a {
+          text-decoration: none;
+          text-transform: uppercase;
+          color: #007bff;
+        }
       }
     }
   }

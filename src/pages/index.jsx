@@ -39,12 +39,12 @@ import UltramodernEquipment from "../images/se-3.png";
 
 
 //assets
-import handleft from "../images/icons/hand-btn.png"
+/* import handleft from "../images/icons/left-btn.png"
 import handRight from "../images/icons/right-btn.png"
 import arrowLeft from "../images/icons/left-arrow-btn.png"
 import arrowRight from "../images/icons/right-arrow-btn.png"
 import facial from "../images/product-image1.png";
-import facial2 from "../images/product-image2.png";
+import facial2 from "../images/product-image2.png"; */
 
 export default function index() {
   const [windowLoaded, setWindowLoaded] = useState(undefined)
@@ -218,31 +218,36 @@ export default function index() {
             <div className="card">
               <img src={Result1} alt="picture" />
               <div className="text">
-                <p>{t("")}</p>
+                <p>{t("result1")}</p>
+                <a href="#;"> {"JAMES L. 29 " + t("years") } </a>
               </div>
             </div>
             <div className="card">
               <img src={Result2} alt="picture" />
               <div className="text">
-                <p>{t("")}</p>
+                <p>{t("result2")}</p>
+                <a href="#;"> {"- Evelyn W. 54 " + t("years") } </a>
               </div>
             </div>
             <div className="card">
               <img src={Result3} alt="picture" />
               <div className="text">
-                <p>{t("")}</p>
+                <p>{t("result3")}</p>
+                <a href="#;"> {"- Sharon W. 50" + t("years") } </a>
               </div>
             </div>
             <div className="card">
               <img src={Result4} alt="picture" />
               <div className="text">
-                <p>{t("")}</p>
+                <p>{t("result4")}</p>
+                <a href="#;"> {"- Lily B. 65 " + t("years") } </a>
               </div>
             </div>
             <div className="card">
               <img src={Result5} alt="picture" />
               <div className="text">
                 <p>{t("result5")}</p>
+                <a href="#;"> {"- Alexi B. 35" + t("years") } </a>
               </div>
             </div>
           </div>
