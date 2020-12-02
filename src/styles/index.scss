@@ -561,6 +561,9 @@ input[type="checkbox"] {
   height: 20em;
   display: flex;
   align-items: center;
+  @include media(xl) {
+    min-height: 650px;
+  }
   .text {
     margin: 20px;
     text-align: justify;
@@ -1057,13 +1060,26 @@ footer {
         }
       }
       button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 30%;
         color: white;
-        padding: 20px;
+        padding: 10px;
         border: none;
         background: #a2d0d2;
         border-radius: 28px;
         margin-top: 10px;
+        font-size: 1.5rem;
+        @include media(md) {
+          width: 70%;
+        }
+        @include media(sm) {
+          width: 70%;
+        }
+        @include media(xs) {
+          width: 100%;
+        }
       }
     }
   }
