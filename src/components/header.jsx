@@ -9,11 +9,9 @@ import MenuIcon from "../images/icons/menu-icon.png"
 import mxFlag from "../images/icons/mx.png"
 import usaFlag from "../images/icons/usa.png"
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faStar,
-} from '@fortawesome/free-solid-svg-icons'
-import { config } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faStar } from "@fortawesome/free-solid-svg-icons"
+import { config } from "@fortawesome/fontawesome-svg-core"
 // Disable the auto CSS insertion
 config.autoAddCss = false
 
@@ -27,16 +25,36 @@ export default function Header({ switchLang, modal }) {
           <img className="imagenLogo" src={Logo} alt="Logo" />
           <ul>
             <li className="review">
-            <FontAwesomeIcon style={{color:"gold", height: '30px'}} icon={faStar} size="1x" />
-            <FontAwesomeIcon style={{color:"gold", height: '30px'}} icon={faStar} size="1x" />
-            <FontAwesomeIcon style={{color:"gold", height: '30px'}} icon={faStar} size="1x" />
-            <FontAwesomeIcon style={{color:"gold", height: '30px'}} icon={faStar} size="1x" />
-            <FontAwesomeIcon style={{color:"gold", height: '30px'}} icon={faStar} size="1x" />
+              <FontAwesomeIcon
+                style={{ color: "gold", height: "30px" }}
+                icon={faStar}
+                size="1x"
+              />
+              <FontAwesomeIcon
+                style={{ color: "gold", height: "30px" }}
+                icon={faStar}
+                size="1x"
+              />
+              <FontAwesomeIcon
+                style={{ color: "gold", height: "30px" }}
+                icon={faStar}
+                size="1x"
+              />
+              <FontAwesomeIcon
+                style={{ color: "gold", height: "30px" }}
+                icon={faStar}
+                size="1x"
+              />
+              <FontAwesomeIcon
+                style={{ color: "gold", height: "30px" }}
+                icon={faStar}
+                size="1x"
+              />
             </li>
-            <span className="review">{"(2,264 "+t("review")+")"}</span>
+            <span className="review">{"(2,264 " + t("review") + ")"}</span>
             <li>
               {/* <img src={usaFlag} alt="Flag"/> */}
-              <span>Lang/EN</span>
+              <span>EN</span>
             </li>
             <li>
               <img onClick={modal} src={ShoppingCart} alt="Shopping Cart" />
