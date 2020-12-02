@@ -48,7 +48,7 @@ import facial2 from "../images/product-image2.png"; */
 
 export default function index() {
   const [windowLoaded, setWindowLoaded] = useState(undefined)
-
+  const [modal, setmodal] = useState(false);
   useEffect(() => {
   
     if (!windowLoaded) {
@@ -65,6 +65,11 @@ export default function index() {
   }, [windowLoaded])
 
   const [t, i18n] = useTranslation()
+
+  function handleChange(){
+    setmodal(!modal);
+  }
+
   function switchLang(lang) {
     i18n.use(initReactI18next).init({ lng: lang })
 
@@ -72,7 +77,7 @@ export default function index() {
   }
   return (
     <>
-      <Layout switchLang={switchLang}>
+      <Layout handleChange={handleChange} switchLang={switchLang}>
         <SEO title="Inicio" />
         <section className="banner">
             <div className="container">
@@ -83,7 +88,7 @@ export default function index() {
                 <h1>{t("bannerInfoh1")}</h1>
                 <p>{t("bannerInfop1")}</p>
                 <p>{t("bannerInfop2")}</p>
-                <button>{t("bannerInfob1")}</button>
+                <button onClick={(e)=> {handleChange(), e.preventDefault()}}>{t("bannerInfob1")}</button>
               </div>
               </span>
             </div>
@@ -155,7 +160,7 @@ export default function index() {
                 <h3>{t("sub-title-2")}</h3>
                 <p>{t("p-1-2")}</p>
                 <p>{t("p-2-2")}</p>
-                <button >{t("button-blog")}</button>
+                <button onClick={(e)=> {handleChange(), e.preventDefault()}}>{t("button-blog")}</button>
               </div>
             </div>
           </div>
@@ -209,7 +214,7 @@ export default function index() {
 
         <div className="callContainer">
           <h2>{t("callTitle")}</h2>
-          <button>{t("callButton")}</button>
+          <button onClick={(e)=> {handleChange(), e.preventDefault()}}>{t("callButton")}</button>
         </div>
 
         <section className="results">
@@ -338,6 +343,38 @@ export default function index() {
             </div>
           </div>
         </footer>
+        { 
+         modal ?
+        <div className="modal">
+            <div className="container">
+              <div className="x">
+                <div onClick={() => setmodal(!modal)}>x</div>
+              </div>
+                <h2>I Want Flawless Skin Today</h2>
+              <form onSubmit={console.log("Listo")}>
+                <article>
+                  <label htmlFor="">Name</label>
+                  <input required type="text" name="" id=""/>
+                </article>
+                <article>
+                  <label htmlFor="">Email</label>
+                  <input required type="text" name="" id=""/>
+                </article>
+                <article>
+                  <label htmlFor="">Phone</label>
+                  <input required type="text" name="" id=""/>
+                </article>
+{/*                 <div>
+                  <input type="checkbox" id="" name=""/>
+                  <label for="">He leído y acepto el <span>Aviso de Privacidad</span></label>
+                </div> */}
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+        </div>
+         :
+          <></>
+        }
       </Layout>
     </>
   )

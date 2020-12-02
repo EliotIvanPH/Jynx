@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header.jsx"
 
 
-const Layout = ({ children, switchLang }) => {
+const Layout = ({ children, switchLang, handleChange }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,7 +25,7 @@ const Layout = ({ children, switchLang }) => {
 
   return (
     <>
-      <Header switchLang={switchLang} siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header modal={handleChange} switchLang={switchLang} siteTitle={data.site.siteMetadata?.title || `Title`} />
       <main>{children}</main>
     </>
   )

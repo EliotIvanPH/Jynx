@@ -17,7 +17,7 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 // Disable the auto CSS insertion
 config.autoAddCss = false
 
-export default function Header({ switchLang }) {
+export default function Header({ switchLang, modal }) {
   const [t, i18n] = useTranslation()
 
   return (
@@ -39,7 +39,7 @@ export default function Header({ switchLang }) {
               <span>Lang/EN</span>
             </li>
             <li>
-              <img src={ShoppingCart} alt="Shopping Cart" />
+              <img onClick={modal} src={ShoppingCart} alt="Shopping Cart" />
             </li>
           </ul>
         </nav>
