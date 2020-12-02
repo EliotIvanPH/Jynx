@@ -6,6 +6,9 @@
   font-family: "Barlow Semi Condensed", sans-serif;
 }
 body {
+  button {
+    cursor: pointer;
+  }
   /*   @include media(xs) {
     background-color: red;
   }
@@ -253,7 +256,6 @@ body {
       }
     }
     .form-btn {
-      width: 550px;
       display: flex;
       flex-flow: row;
       justify-content: space-between;
