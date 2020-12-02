@@ -673,6 +673,9 @@ input[type="checkbox"] {
       img {
         width: 300px;
         border-radius: 20px 20px 0px 0px;
+        @include media(xl) {
+          width: 100%;
+        }
       }
       .text {
         padding: 48px 38px 40px 39px;
@@ -710,37 +713,32 @@ input[type="checkbox"] {
 }
 
 .gallery {
-  padding: 20px;
-  div img {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  @include media(lg) {
-    .images {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+  .images {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    @include media(xs) {
+      display: flex;
+      flex-flow: row nowrap;
+      overflow-x: scroll;
+    }
+    article {
       img {
-        margin-bottom: 1px;
+        width: 100%;
+        @include media(xs) {
+          margin: 10px;
+          width: 200px;
+          height: 200px;
+        }
       }
-    }
-    .heightImg {
-      height: 55%;
-    }
-  }
-  @include media(xl) {
-    .images {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      img {
-        margin-bottom: 1px;
+      &:first-of-type {
+        grid-row: span 2;
+        width: 100%;
       }
-    }
-    .heightImg {
-      height: 55%;
     }
   }
 }
-
 .faq {
   padding: 22px;
   text-align: justify;

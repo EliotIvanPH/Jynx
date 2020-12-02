@@ -257,15 +257,21 @@ export default function index() {
           <div className="container">
             <h2>{t("galleryTitle")}</h2>
             <div className="images">
+              <article>
               <img src={ Gallery1 } alt="gallery"/>
-              <div>
-                <img src={ Gallery2 } alt="gallery" className="heightImg"/>
+              </article>
+              <article>
+                <img src={ Gallery2 } alt="gallery" />
+              </article>
+              <article>
                 <img src={ Gallery3 } alt="gallery"/>
-              </div>
-              <div>
+              </article>
+              <article>
                 <img src={ Gallery4 } alt="gallery"/>
-                <img src={ Gallery5 } alt="gallery" className="heightImg"/>
-              </div>
+              </article>
+              <article>
+                <img src={ Gallery5 } alt="gallery"/>
+              </article>
             </div>
           </div>
         </section>
