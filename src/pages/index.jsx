@@ -252,6 +252,7 @@ export default function index() {
             </div>
           </div>
         </section>
+        
         <section className="gallery">
           <div className="container">
             <h2>{t("galleryTitle")}</h2>

@@ -35,7 +35,8 @@ export default function Header({ switchLang }) {
             </li>
             <span className="review">{"(2,264 "+t("review")+")"}</span>
             <li>
-              <img src={usaFlag} alt="Flag"/>
+              {/* <img src={usaFlag} alt="Flag"/> */}
+              <span>Lang/EN</span>
             </li>
             <li>
               <img src={ShoppingCart} alt="Shopping Cart" />
