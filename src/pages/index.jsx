@@ -90,6 +90,9 @@ export default function index() {
                   onClick={e => {
                     handleChange(), e.preventDefault()
                   }}
+                  onTouchEnd={e => {
+                    handleChange(), e.preventDefault()
+                  }}
                 >
                   {t("bannerInfob1")}
                 </button>
