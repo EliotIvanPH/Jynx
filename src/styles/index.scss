@@ -732,12 +732,14 @@ input[type="checkbox"] {
         @include media(xs) {
           margin: 10px;
           width: 200px;
-          height: 200px;
         }
       }
       &:first-of-type {
         grid-row: span 2;
         width: 100%;
+        @include media(xs) {
+          display: none;
+        }
       }
     }
   }
