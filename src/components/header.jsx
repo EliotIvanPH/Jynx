@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import "../styles/Header.scss"
 import { useTranslation } from "react-i18next"
-import Logo from "../images/logo.png"
+import Logo from "../images/logo.webp"
 import ShoppingCart from "../images/icons/shop.png"
 import MenuIcon from "../images/icons/menu-icon.png"
 

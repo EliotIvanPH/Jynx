@@ -31,7 +31,7 @@ body {
 
 .banner {
   width: 100%;
-  background-image: url("../images/banner-image.jpg");
+  background-image: url("../images/banner-image.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -556,7 +556,7 @@ input[type="checkbox"] {
 }
 
 .testimonial {
-  background-image: url("../images/testimonial_bg.jpg");
+  background-image: url("../images/testimonial_bg.webp");
   background-size: cover;
   height: 20em;
   display: flex;
@@ -605,14 +605,14 @@ input[type="checkbox"] {
     }
   }
   @include media(lg) {
-    background-image: url("../images/testimonial.jpg");
+    background-image: url("../images/testimonial.webp");
     .text {
       width: 50%;
       float: right;
     }
   }
   @include media(xl) {
-    background-image: url("../images/testimonial.jpg");
+    background-image: url("../images/testimonial.webp");
     background-size: cover;
     height: 500px;
     .text {
