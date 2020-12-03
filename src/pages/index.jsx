@@ -143,15 +143,23 @@ export default function index() {
               </div>
             </div>
             <div className="form-btn">
-              <img className="arrow-btn-left f" src={arrowLeft} />
+              <img
+                className="arrow-btn-left f"
+                src={arrowLeft}
+                alt="icon arrow"
+              />
               <div className="free-skin-btn">
                 <button className="buttonFlaw">
-                  <img className="left" src={handleft} />
+                  <img className="left" src={handleft} alt="icon hand" />
                   {t("form-info-button")}
-                  <img className="right" src={handRight} />
+                  <img className="right" src={handRight} alt="icon hand" />
                 </button>
               </div>
-              <img className="arrow-btn-right f" src={arrowRight} />
+              <img
+                className="arrow-btn-right f"
+                src={arrowRight}
+                alt="icon arrow"
+              />
             </div>
           </div>
         </section>
