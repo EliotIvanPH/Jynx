@@ -8,6 +8,7 @@ import { initReactI18next } from "react-i18next"
 import { useEffect, useState } from "react"
 import "../styles/index.scss"
 import Crypto from "crypto-js"
+import swal from "sweetalert"
 
 //assets
 import banner from "../images/banner-image.webp"
@@ -137,9 +138,13 @@ export default function index() {
       .then(res => res.json())
       .then(response => {
         if (response.result === "success") {
-          alert(response.result)
+          swal(response.result).then(() => {
+            location.reload()
+          })
         } else {
-          alert(response.error)
+          swal(response.error).then(() => {
+            console.log("Listo")
+          })
         }
       })
     //   } else {
@@ -192,6 +197,7 @@ export default function index() {
                     type="text"
                     className="form-control"
                     placeholder={t("contactName")}
+                    required
                   />
                 </div>
               </div>
@@ -202,6 +208,7 @@ export default function index() {
                     type="text"
                     className="form-control"
                     placeholder={t("contactLastName")}
+                    required
                   />
                 </div>
               </div>
@@ -212,6 +219,7 @@ export default function index() {
                     type="text"
                     className="form-control"
                     placeholder={t("contactEmail")}
+                    required
                   />
                 </div>
               </div>
@@ -223,12 +231,14 @@ export default function index() {
                     pattern="/^\+(\d{1}\-)?(\d{1,3})$/"
                     className="form-control"
                     placeholder={"+52"}
+                    required
                   />
                   <input
                     id="phone"
                     type="text"
                     className="form-control"
                     placeholder={t("contactPhone")}
+                    required
                   />
                 </div>
               </div>
@@ -468,21 +478,26 @@ export default function index() {
           <form onSubmit={e => uploadNewLead(e, "2")}>
             <article>
               <label htmlFor="name2">{t("contactName")} </label>
-              <input id="name2" name="name2" />
+              <input required id="name2" name="name2" />
             </article>
             <article>
               <label htmlFor="lastName2">{t("contactLastName")} </label>
-              <input id="lastName2" name="lastname2" />
+              <input required id="lastName2" name="lastname2" />
             </article>
             <article>
               <label htmlFor="email2">{t("contactEmail")} </label>
-              <input id="email2" name="email2" />
+              <input required id="email2" name="email2" />
             </article>
             <article>
               <label htmlFor="phone2">{t("contactPhone")} </label>
               <div>
-                <input id="phoneCode2" name="phoneCode2" placeholder="+52" />
-                <input id="phone2" name="phone2" />
+                <input
+                  required
+                  id="phoneCode2"
+                  name="phoneCode2"
+                  placeholder="+52"
+                />
+                <input required id="phone2" name="phone2" />
               </div>
             </article>
             <button type="submit">{t("callButton")}</button>
