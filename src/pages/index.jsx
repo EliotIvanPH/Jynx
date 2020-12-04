@@ -7,6 +7,8 @@ import { useTranslation } from "react-i18next"
 import { initReactI18next } from "react-i18next"
 import { useEffect, useState } from "react"
 import "../styles/index.scss"
+import Crypto from "crypto-js"
+
 //assets
 import banner from "../images/banner-image.webp"
 import handleft from "../images/icons/hand-btn.png"
@@ -73,6 +75,78 @@ export default function index() {
 
     localStorage.setItem("i18nextLng", lang)
   }
+  const uploadNewLead = (e, index) => {
+    e.preventDefault()
+    // let dataToken = {
+    //   Partner_Id: "81739",
+    //   Secret_Key:
+    //     "HVGOhJe39DhJET7QKisJZUaiL7Q9bmnCuati6d3OFWXbL9SvCIDwxDFY0I8k7OBt",
+    //   Time: new Date().getTime(),
+    // }
+    // dataToken["Sign"] = Crypto.SHA256(
+    //   dataToken["Partner_Id"].toString() +
+    //     dataToken["Time"].toString() +
+    //     dataToken["Secret_Key"]
+    // )
+    // dataToken["Sign"] = dataToken["Sign"].toString(Crypto.enc.Hex)
+    // console.log(
+    //   dataToken.Partner_Id +
+    //     " " +
+    //     dataToken.Secret_Key +
+    //     " " +
+    //     dataToken.Time +
+    //     " " +
+    //     dataToken.Sing +
+    //     " " +
+    //     " data token"
+    // )
+    // fetch("https://cosmetics.epasero.com/api/auth/", {
+    //   method: "POST",
+    //   body: JSON.stringify(dataToken),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // })
+    //   .then(res => res.json())
+    //   .then(response => {
+    //     if (response.token) {
+    //       console.log(response.token)
+
+    let dataLead = {
+      firstName: document.getElementById(`name${index}`).value,
+      lastName: document.getElementById(`lastName${index}`).value,
+      email: document.getElementById(`email${index}`).value,
+      phoneCountryCode: document.getElementById(`phoneCode${index}`).value,
+      phoneNumber: document.getElementById(`phone${index}`).value,
+      country: "US",
+      referral: "lead",
+      gender: "Choose",
+      partner_id: "81739",
+      source: "lead",
+      city: "USA",
+    }
+    console.log(dataLead)
+    fetch("https://cosmetics.epasero.com/cron/signUpVenisApp.php", {
+      method: "POST",
+      body: JSON.stringify(dataLead),
+      headers: {
+        "Content-Type": "application/json",
+        // Authorization: "Bearer " + response.token,
+      },
+    })
+      .then(res => res.json())
+      .then(response => {
+        if (response.result === "success") {
+          alert(response.result)
+        } else {
+          alert(response.error)
+        }
+      })
+    //   } else {
+    //     console.log("No entro" + response)
+    //   }
+    // })
+  }
   return (
     <>
       <Layout handleChange={handleChange} switchLang={switchLang}>
@@ -88,7 +162,7 @@ export default function index() {
                 <p>{t("bannerInfop2")}</p>
                 <button
                   onClick={e => {
-                    handleChange(), e.preventDefault()
+                    handleChange()
                   }}
                   onTouchEnd={e => {
                     handleChange(), e.preventDefault()
@@ -117,7 +191,17 @@ export default function index() {
                     id="name"
                     type="text"
                     className="form-control"
-                    placeholder={t("name")}
+                    placeholder={t("contactName")}
+                  />
+                </div>
+              </div>
+              <div>
+                <div className="form-group">
+                  <input
+                    id="lastName"
+                    type="text"
+                    className="form-control"
+                    placeholder={t("contactLastName")}
                   />
                 </div>
               </div>
@@ -125,24 +209,31 @@ export default function index() {
                 <div className="form-group">
                   <input
                     id="email"
-                    type="email"
+                    type="text"
                     className="form-control"
-                    placeholder={t("email")}
+                    placeholder={t("contactEmail")}
                   />
                 </div>
               </div>
               <div>
-                <div className="form-group">
+                <div className="form-group phoneInput">
+                  <input
+                    id="phoneCode"
+                    type="text"
+                    pattern="/^\+(\d{1}\-)?(\d{1,3})$/"
+                    className="form-control"
+                    placeholder={"+52"}
+                  />
                   <input
                     id="phone"
                     type="text"
                     className="form-control"
-                    placeholder={t("phone")}
+                    placeholder={t("contactPhone")}
                   />
                 </div>
               </div>
             </div>
-            <div className="form-btn">
+            <div onClick={e => uploadNewLead(e, "")} className="form-btn">
               <img
                 className="arrow-btn-left f"
                 src={arrowLeft}
@@ -256,7 +347,7 @@ export default function index() {
 
         <section className="results">
           <h2>{t("resultTitle")}</h2>
-          <div class="scrolling-wrapper">
+          <div className="scrolling-wrapper">
             <div className="card">
               <img src={Result1} alt="picture" />
               <div className="text">
@@ -374,22 +465,27 @@ export default function index() {
 
         <section className="subscribe">
           <h2>{t("subscribeTitle")}</h2>
-          <form>
+          <form onSubmit={e => uploadNewLead(e, "2")}>
             <article>
-              <label htmlFor="">{t("name")} </label>
-              <input />
+              <label htmlFor="name2">{t("contactName")} </label>
+              <input id="name2" name="name2" />
             </article>
             <article>
-              <label htmlFor="">{t("email")}</label>
-              <input />
+              <label htmlFor="lastName2">{t("contactLastName")} </label>
+              <input id="lastName2" name="lastname2" />
             </article>
             <article>
-              <label htmlFor="">{t("phone")} </label>
-              <input />
+              <label htmlFor="email2">{t("contactEmail")} </label>
+              <input id="email2" name="email2" />
             </article>
-            <button onClick={e => e.defaultPrevented()}>
-              {t("callButton")}
-            </button>
+            <article>
+              <label htmlFor="phone2">{t("contactPhone")} </label>
+              <div>
+                <input id="phoneCode2" name="phoneCode2" placeholder="+52" />
+                <input id="phone2" name="phone2" />
+              </div>
+            </article>
+            <button type="submit">{t("callButton")}</button>
           </form>
         </section>
 
@@ -415,18 +511,31 @@ export default function index() {
                 <div onClick={() => setmodal(!modal)}>x</div>
               </div>
               <h2>I Want Flawless Skin Today</h2>
-              <form onSubmit={console.log("Listo")}>
+              <form onSubmit={e => uploadNewLead(e, "3")}>
                 <article>
-                  <label htmlFor="">Name</label>
-                  <input required type="text" name="" id="" />
+                  <label htmlFor="name3">{t("contactName")}</label>
+                  <input required type="text" name="name3" id="name3" />
                 </article>
                 <article>
-                  <label htmlFor="">Email</label>
-                  <input required type="text" name="" id="" />
+                  <label htmlFor="lastName3">{t("contactLastName")}</label>
+                  <input required type="text" name="lastName3" id="lastName3" />
                 </article>
                 <article>
-                  <label htmlFor="">Phone</label>
-                  <input required type="text" name="" id="" />
+                  <label htmlFor="email3">{t("contactEmail")}</label>
+                  <input required type="text" name="email3" id="email3" />
+                </article>
+                <article>
+                  <label htmlFor="phone3">{t("contactPhone")}</label>
+                  <div>
+                    <input
+                      required
+                      type="text"
+                      name="phoneCode2"
+                      id="phoneCode3"
+                      placeholder="+52"
+                    />
+                    <input required type="text" name="phone3" id="phone3" />
+                  </div>
                 </article>
                 {/*                 <div>
                   <input type="checkbox" id="" name=""/>

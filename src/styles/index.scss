@@ -218,14 +218,48 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      div {
+        width: 100%;
+      }
+      @include media(lg) {
+        flex-flow: column;
+        width: 80%;
+      }
       @include media(md) {
         flex-flow: column;
+        width: 80%;
       }
       @include media(sm) {
         flex-flow: column;
+        width: 80%;
       }
       @include media(xs) {
         flex-flow: column;
+        width: 80%;
+      }
+      input {
+        border: 1px solid #c5c5c5;
+        @include media(xl) {
+          border: none;
+        }
+      }
+      .phoneInput {
+        display: flex;
+        input {
+          &:first-of-type {
+            width: 40px;
+            padding: 5px;
+            border: 1px solid #c5c5c5;
+            @include media(xl) {
+              margin-right: 0px;
+              border: none;
+            }
+            @include media(lg) {
+              margin-right: 0px;
+            }
+          }
+        }
       }
     }
     input {
@@ -239,19 +273,26 @@ body {
       box-shadow: none;
       outline: none;
       border: none;
+      @include media(lg) {
+        width: 100%;
+        .f {
+          display: inline;
+        }
+        margin: 10px 0px 10px 0px;
+      }
       @include media(md) {
-        width: 400px;
+        width: 100%;
         .f {
           display: inline;
         }
         margin: 10px 0px 10px 0px;
       }
       @include media(sm) {
-        width: 400px;
+        width: 100%;
         margin: 10px 0px 10px 0px;
       }
       @include media(xs) {
-        width: 300px;
+        width: 100%;
         margin: 10px 0px 10px 0px;
       }
     }
@@ -858,6 +899,17 @@ input[type="checkbox"] {
       label {
         align-self: flex-start;
       }
+      div {
+        width: 100%;
+        display: flex;
+        input {
+          &:first-of-type {
+            width: 40px;
+            padding: 5px;
+            margin-right: 5px;
+          }
+        }
+      }
     }
     button {
       height: 50px;
@@ -1047,28 +1099,20 @@ footer {
           box-sizing: border-box;
           border-radius: 4px;
           margin-bottom: 14px;
+          padding: 5px;
+          color: #343132;
+          font-style: italic;
         }
-      }
-      div {
-        width: 40%;
-        height: 80px;
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        align-items: center;
-        input {
-          width: 10px;
-          height: 10px;
-          background-color: rosybrown;
-        }
-        label {
-          font-family: Lato;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 0.7em;
-          line-height: 114.5%;
-          letter-spacing: 0.13em;
-          color: #4d4d4d;
+        div {
+          width: 100%;
+          display: flex;
+          input {
+            &:first-of-type {
+              width: 40px;
+              padding: 5px;
+              margin-right: 5px;
+            }
+          }
         }
       }
       button {
