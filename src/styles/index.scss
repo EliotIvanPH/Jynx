@@ -246,17 +246,37 @@ body {
       }
       .phoneInput {
         display: flex;
+        align-items: center;
+        img {
+          width: 46px;
+          height: 27px;
+          @include media(xs) {
+            width: 26px;
+            height: 20px;
+          }
+          @include media(md) {
+            width: 26px;
+            height: 20px;
+          }
+        }
         input {
           &:first-of-type {
-            width: 40px;
-            padding: 5px;
+            width: 35px;
+            padding: 0px;
+            margin-right: -7px;
             border: 1px solid #c5c5c5;
             @include media(xl) {
-              margin-right: 0px;
+              margin-right: -7px;
               border: none;
             }
             @include media(lg) {
-              margin-right: 0px;
+              margin-right: -7px;
+            }
+            @include media(md) {
+              margin: 0px -7px 0px 5px;
+            }
+            @include media(xs) {
+              margin: 0px -7px 0px 5px;
             }
           }
         }
@@ -903,6 +923,12 @@ input[type="checkbox"] {
       div {
         width: 100%;
         display: flex;
+        align-items: center;
+        img {
+          width: 26px;
+          height: 22px;
+          margin: 0px 5px;
+        }
         input {
           &:first-of-type {
             width: 40px;
@@ -1107,6 +1133,11 @@ footer {
         div {
           width: 100%;
           display: flex;
+          img {
+            margin: 4px 5px 0px 0px;
+            width: 30px;
+            height: 22px;
+          }
           input {
             &:first-of-type {
               width: 40px;

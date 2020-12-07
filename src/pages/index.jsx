@@ -11,6 +11,7 @@ import Crypto from "crypto-js"
 import swal from "sweetalert"
 
 //assets
+import usaFlag from "../images/icons/usa.png"
 import banner from "../images/banner-image.webp"
 import handleft from "../images/icons/hand-btn.png"
 import handRight from "../images/icons/right-btn.png"
@@ -250,12 +251,14 @@ export default function index() {
               </div>
               <div>
                 <div className="form-group phoneInput">
+                  <img src={usaFlag} alt="Flag" />
                   <input
                     id="phoneCode"
                     type="text"
                     pattern="/^\+(\d{1}\-)?(\d{1,3})$/"
                     className="form-control"
-                    placeholder={"+52"}
+                    placeholder={"+1"}
+                    value={"+1"}
                     required
                   />
                   <input
@@ -516,11 +519,13 @@ export default function index() {
             <article>
               <label htmlFor="phone2">{t("contactPhone")} </label>
               <div>
+                <img src={usaFlag} alt="Flag" />
                 <input
                   required
                   id="phoneCode2"
                   name="phoneCode2"
-                  placeholder="+52"
+                  placeholder={"+1"}
+                  value={"+1"}
                 />
                 <input required id="phone2" name="phone2" />
               </div>
@@ -567,12 +572,14 @@ export default function index() {
                 <article>
                   <label htmlFor="phone3">{t("contactPhone")}</label>
                   <div>
+                    <img src={usaFlag} alt="Flag" />
                     <input
                       required
                       type="text"
                       name="phoneCode2"
                       id="phoneCode3"
-                      placeholder="+52"
+                      placeholder={"+1"}
+                      value={"+1"}
                     />
                     <input required type="text" name="phone3" id="phone3" />
                   </div>

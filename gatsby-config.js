@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: `/lp`,
   siteMetadata: {
-    title: `Venis`,
+    title: `Venis Skincare`,
     description: `Glowing Skin is Just One Step Away`,
     author: `@EliotIvanPH`,
   },

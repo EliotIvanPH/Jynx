@@ -34,7 +34,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={defaultTitle ? `${defaultTitle}` : null}
       meta={[
         {
           name: `description`,
@@ -43,6 +43,14 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:title`,
           content: title,
+        },
+        {
+          property: `og:url`,
+          content: "https://veniskin.com/lp",
+        },
+        {
+          property: `og:image`,
+          content: "https://veniskin.com/lp/static/ogimg.png",
         },
         {
           property: `og:description`,
